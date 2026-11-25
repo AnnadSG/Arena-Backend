@@ -1,0 +1,24 @@
+# Render Blueprint: in Render choose "New > Blueprint" and point it at this repository.
+# Creates the web service and a PostgreSQL database and wires DATABASE_URL between them.
+# Every push to the default branch redeploys automatically.
+services:
+  - type: web
+    name: arena-jogos
+    runtime: node
+    plan: free
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: arena-db
+          property: connectionString
+
+databases:
+  - name: arena-db
+    plan: free
+    databaseName: arena
+    user: arena

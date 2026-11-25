@@ -1,0 +1,26 @@
+{
+  "name": "arena-jogos-matematicos",
+  "version": "1.0.0",
+  "description": "Plataforma de jogos matemáticos (CNJM) com agentes de procura adversa, ranking ELO e jogo online",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --env-file-if-exists=.env --watch server/index.js",
+    "test": "node --test test/*.test.js",
+    "migrate": "node server/db/migrate.js",
+    "tournament": "node scripts/tournament.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.22.3",
+    "pg": "^8.23.1",
+    "socket.io": "^4.8.4"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.8.4"
+  }
+}
