@@ -130,6 +130,8 @@ na partida sempre que ela muda.
 
 - **Sem autenticação**: o jogador é identificado só pelo nome. Próximo passo: contas com palavra-passe ou OAuth.
 - **Partidas em curso só em memória**: se o servidor reiniciar, perdem-se (as terminadas ficam na base de dados).
+
+- Desenvolvido por Anna de Sá Guimarães.
   Para várias instâncias seria preciso Redis e o adaptador Redis do Socket.IO.
 - **Motor**: falta ordenação de jogadas nos nós internos, tabela de transposição e heurísticas mais ricas;
   são o ponto natural para a componente de investigação (comparar variantes no torneio).
