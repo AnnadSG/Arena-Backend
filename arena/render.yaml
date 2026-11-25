@@ -4,6 +4,7 @@
 services:
   - type: web
     name: arena-jogos
+    rootDir: arena
     runtime: node
     plan: free
     buildCommand: npm ci --omit=dev
